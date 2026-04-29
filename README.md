@@ -1,2 +1,21 @@
-# To-Display-Digital-Clock
-This program displays a digital clock that shows the current system time in real-time. It continuously updates every second using time functions and prints the time in HH:MM:SS format. The program runs in a loop to ensure the clock keeps updating without stopping.
+import time
+import sys
+h=3
+m=40
+s=0
+while True:
+    sys.stdout.write("\r {:02d} : {:02d} : {:02d} ".format(h,m,s))
+    sys.stdout.flush()
+    time.sleep(1)
+    s=s+1
+    if s==60:
+        s=0
+        m=m+1
+    if m==60:
+        m=0
+        s=0
+        h=h+1
+    if h==13:
+        h=1
+        m=0
+        s=0
